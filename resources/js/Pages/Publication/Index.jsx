@@ -23,12 +23,21 @@ export default function Index({ auth, publications }) {
                                 Tambah Publikasi
                             </Link>
                             {' '}
-                            <Link
-                                href={route("publication.create")}
+                            <a
+                                href={route("publication.export")}
+                                target="_blank"
                                 className="btn py-2 px-3 text-sm bg-green-600 text-white rounded-lg"
                             >
                                 Export ke Excel
-                            </Link>
+                            </a>
+                            {' '}
+                            <a
+                                href={route("publication.pdf")}
+                                target="_blank"
+                                className="btn py-2 px-3 text-sm bg-red-600 text-white rounded-lg"
+                            >
+                                Export ke PDF
+                            </a>
                         </div>
                         <div className="relative overflow-x-auto">
                             <table className="w-full text-sm text-left text-gray-800 dark:text-gray-800">

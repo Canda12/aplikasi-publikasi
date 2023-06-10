@@ -8,6 +8,7 @@ use App\Actions\Publication\UpdatePublicationAction;
 use App\Exports\PublicationExport; 
 use App\Http\Requests\PublicationStoreRequest; 
 use App\Http\Requests\PublicationUpdateRequest; 
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illumianet\Support\Facades\Session; 
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
@@ -35,6 +36,15 @@ class PublicationController extends Controller
     public function export()
     {
         return Excel::download(new PublicationExport, 'publication.xlsx');
+    }
+
+    public function pdf()
+    {
+        $pdf = Pdf::loadView('publication.export', [
+            'publications' => Publication::orderBy('id', 'DESC')->get(),
+        ]);
+
+        return $pdf->stream(); 
     }
 
     /**

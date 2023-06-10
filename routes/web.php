@@ -35,6 +35,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/publication/create', [PublicationController::class, 'create'])->name('publication.create');
     Route::get('/publication/{publication}/edit', [PublicationController::class, 'edit'])->name('publication.edit');
     Route::get('/publication/export', [PublicationController::class, 'export'])->name('publication.export');  
+    Route::get('/publication/pdf', [PublicationController::class, 'pdf'])->name('publication.pdf');  
     Route::post('/publication', [PublicationController::class, 'store'])->name('publication.store'); 
     Route::put('/publication/{publication}', [PublicationController::class, 'update'])->name('publication.update'); 
     Route::delete('/publication/{publication}', [PublicationController::class, 'delete'])->name('publication.delete'); 
