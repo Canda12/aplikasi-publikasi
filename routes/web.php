@@ -20,6 +20,10 @@ Route::get('/', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/dashboard', function () {
+    return Inertia::render('Dashboard');
+})->middleware(['auth', 'verified']);
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -29,7 +33,8 @@ Route::middleware('auth')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::get('/publication', [PublicationController::class, 'index'])->name('publication.index');
     Route::get('/publication/create', [PublicationController::class, 'create'])->name('publication.create');
-    Route::get('/publication/{publication}/edit', [PublicationController::class, 'edit'])->name('publication.edit'); 
+    Route::get('/publication/{publication}/edit', [PublicationController::class, 'edit'])->name('publication.edit');
+    Route::get('/publication/export', [PublicationController::class, 'export'])->name('publication.export');  
     Route::post('/publication', [PublicationController::class, 'store'])->name('publication.store'); 
     Route::put('/publication/{publication}', [PublicationController::class, 'update'])->name('publication.update'); 
     Route::delete('/publication/{publication}', [PublicationController::class, 'delete'])->name('publication.delete'); 

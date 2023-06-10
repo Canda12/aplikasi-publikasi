@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\Publication; 
 use App\Actions\Publication\CreatePublicationAction; 
 use App\Actions\Publication\UpdatePublicationAction; 
+use App\Exports\PublicationExport; 
 use App\Http\Requests\PublicationStoreRequest; 
 use App\Http\Requests\PublicationUpdateRequest; 
 use Illumianet\Support\Facades\Session; 
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 use Inertia\Inertia; 
 
 class PublicationController extends Controller
@@ -23,6 +25,16 @@ class PublicationController extends Controller
         return Inertia::render('Publication/Index', [
             'publications' => Publication::orderBy('id', 'DESC')->get(), 
         ]); 
+    }
+    
+    /**
+     * Export 
+     *
+     * @return Excel 
+     */
+    public function export()
+    {
+        return Excel::download(new PublicationExport, 'publication.xlsx');
     }
 
     /**

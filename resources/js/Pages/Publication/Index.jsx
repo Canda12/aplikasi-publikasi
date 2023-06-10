@@ -18,9 +18,16 @@ export default function Index({ auth, publications }) {
                         <div className="mb-3 border-b pb-3">
                             <Link
                                 href={route("publication.create")}
-                                className="btn py-2 px-3 text-sm bg-green-600 text-white rounded-lg"
+                                className="btn py-2 px-3 text-sm bg-cyan-600 text-white rounded-lg"
                             >
                                 Tambah Publikasi
+                            </Link>
+                            {' '}
+                            <Link
+                                href={route("publication.create")}
+                                className="btn py-2 px-3 text-sm bg-green-600 text-white rounded-lg"
+                            >
+                                Export ke Excel
                             </Link>
                         </div>
                         <div className="relative overflow-x-auto">

@@ -43,7 +43,7 @@ export default function Create({ auth, publication }) {
                         <div className="mb-3 border-b pb-3">
                             <Link
                                 href={route("publication.index")}
-                                className="btn py-1 px-2 bg-green-600 text-white rounded-lg"
+                                className="btn py-1 px-2 text-sm bg-green-600 text-white rounded-lg"
                             >
                                 Kembali
                             </Link>
