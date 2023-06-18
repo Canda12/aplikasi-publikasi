@@ -10,7 +10,7 @@ import { Head, Link, useForm } from "@inertiajs/react";
 
 export default function Create({ auth, publication }) {
     const { data, setData, post, processing, errors, reset } = useForm({
-        title: publication.title,
+        judul : publication.judul,
         author: publication.author,
         description: publication.description,
         publish_date: publication.publish_date,
@@ -53,25 +53,25 @@ export default function Create({ auth, publication }) {
                                 <div className="mb-4">
                                     <div className="w-1/2">
                                         <InputLabel
-                                            htmlFor="title"
-                                            value="Judul"
+                                            htmlFor="judul"
+                                            value="judul"
                                         />
 
                                         <TextInput
-                                            id="title"
+                                            id="judul"
                                             type="text"
-                                            name="title"
-                                            value={data.title}
+                                            name="judul"
+                                            value={data.judul}
                                             className="mt-1 block w-full"
-                                            autoComplete="title"
+                                            autoComplete="judul"
                                             isFocused={true}
                                             onChange={(e) =>
-                                                setData("title", e.target.value)
+                                                setData("judul", e.target.value)
                                             }
                                         />
 
                                         <InputError
-                                            message={errors.title}
+                                            message={errors.judul}
                                             className="mt-2"
                                         />
                                     </div>

@@ -48,25 +48,25 @@ export default function Create({ auth }) {
                                 <div className="mb-4">
                                     <div className="w-1/2">
                                         <InputLabel
-                                            htmlFor="title"
+                                            htmlFor="judul"
                                             value="Judul"
                                         />
 
                                         <TextInput
-                                            id="title"
+                                            id="judul"
                                             type="text"
-                                            name="title"
-                                            value={data.title}
+                                            name="judul"
+                                            value={data.judul}
                                             className="mt-1 block w-full"
-                                            autoComplete="title"
+                                            autoComplete="judul"
                                             isFocused={true}
                                             onChange={(e) =>
-                                                setData("title", e.target.value)
+                                                setData("judul", e.target.value)
                                             }
                                         />
 
                                         <InputError
-                                            message={errors.title}
+                                            message={errors.judul}
                                             className="mt-2"
                                         />
                                     </div>
@@ -113,7 +113,7 @@ export default function Create({ auth }) {
                                             name="description"
                                             value={data.description}
                                             className="mt-1 block w-full"
-                                            autoComplete="title"
+                                            autoComplete="judul"
                                             isFocused={true}
                                             onChange={(e) =>
                                                 setData(
@@ -124,7 +124,7 @@ export default function Create({ auth }) {
                                         />
 
                                         <InputError
-                                            message={errors.title}
+                                            message={errors.judul}
                                             className="mt-2"
                                         />
                                     </div>

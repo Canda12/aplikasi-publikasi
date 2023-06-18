@@ -22,11 +22,11 @@ class PublicationUpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title'          => 'required',
+            'judul'          => 'required',
             'author'         => 'required',
             'description'    => 'required',
             'publish_date'   => 'required',
-            'published_file' => 'nullable|mimes:pdf|max:2000',
+            'published_file' => 'nullable|max:2000',
         ];
     }
 }

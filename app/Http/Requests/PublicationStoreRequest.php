@@ -22,7 +22,7 @@ class PublicationStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title'          => 'required',
+            'judul'          => 'required',
             'author'         => 'required',
             'description'    => 'required',
             'publish_date'   => 'required',

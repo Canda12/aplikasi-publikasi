@@ -70,7 +70,7 @@ export default function Index({ auth, publications }) {
                                                 scope="row"
                                                 className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
                                             >
-                                                {publication.title}
+                                                {publication.judul}
                                             </th>
                                             <td className="px-6 py-4">
                                                 {publication.author}

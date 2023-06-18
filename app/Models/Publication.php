@@ -10,7 +10,7 @@ class Publication extends Model
     use HasFactory;
 
     public $fillable = [
-        'title', 
+        'judul', 
         'description', 
         'author', 
         'publish_date', 
